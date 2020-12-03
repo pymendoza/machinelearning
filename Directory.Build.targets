@@ -50,7 +50,7 @@
     <SingleHit>true</SingleHit>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <CoverletOutputFormat>opencover</CoverletOutputFormat>
-    <CoverletOutput>$(BaseOutputPath)$(PlatformConfig)\coverage\$(MSBuildProjectName)_$(TargetFramework)_$(_TestArchitecture).coverage</CoverletOutput>
+    <CoverletOutput>$(ArtifactsDir)bin\$(MSBuildProjectName)\$(Configuration)\coverage\$(MSBuildProjectName)_$(TargetFramework)_$(_TestArchitecture).coverage</CoverletOutput>
     <Include></Include>
     <Exclude></Exclude>
     <ExcludeByAttribute>ExcludeFromCodeCoverage</ExcludeByAttribute>
