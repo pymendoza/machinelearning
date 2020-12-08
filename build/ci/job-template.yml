@@ -154,7 +154,7 @@ jobs:
       inputs:
         testRunner: 'vSTest'
         searchFolder: '$(Build.SourcesDirectory)/artifacts/TestResults'
-        testResultsFiles: '**/*.html'
+        testResultsFiles: '**/*.xml'
         testRunTitle: Machinelearning_Tests_${{ parameters.name }}_$(_configuration)_$(Build.BuildNumber)
         configuration: $(_configuration)
         mergeTestResults: true
