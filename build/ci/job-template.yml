@@ -160,14 +160,14 @@ jobs:
         mergeTestResults: true
     - task: CopyFiles@2
       displayName: Stage build logs
-      condition: not(succeeded())
+      condition: succeededOrFailed()
       inputs:
         sourceFolder: $(Build.SourcesDirectory)
         contents: 'artifacts/log/**'
         targetFolder: $(Build.ArtifactStagingDirectory)
     - task: CopyFiles@2
       displayName: Stage test output
-      condition: not(succeeded())
+      condition: succeededOrFailed()
       inputs:
         sourceFolder: $(Build.SourcesDirectory)
         contents: |
@@ -185,7 +185,7 @@ jobs:
         targetFolder: $(Build.ArtifactStagingDirectory)
     - task: PublishBuildArtifacts@1
       displayName: Publish build and test logs
-      condition: not(succeeded())
+      condition: succeededOrFailed()
       inputs:
         pathToPublish: $(Build.ArtifactStagingDirectory)
         artifactName: ${{ parameters.name }} $(_config_short)
