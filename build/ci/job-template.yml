@@ -152,7 +152,7 @@ jobs:
       displayName: Publish Test Results
       condition: succeededOrFailed()
       inputs:
-        testRunner: 'vSTest'
+        testRunner: 'xUnit 2'
         searchFolder: '$(Build.SourcesDirectory)/artifacts/TestResults'
         testResultsFiles: '**/*.xml'
         testRunTitle: Machinelearning_Tests_${{ parameters.name }}_$(_configuration)_$(Build.BuildNumber)
